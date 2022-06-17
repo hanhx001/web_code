@@ -15,7 +15,12 @@ public class Testlambada {
         List<String> collected = Stream.of("a", "b", "c").collect(Collectors.toList());
         Optional<String> c = Stream.of("a", "b", "c").reduce((a, b)->a+b);
         Optional<Integer> f = Stream.of(1, 1, 3).reduce((d, e) -> d * e);
+        Stream.of(1,2,3).reduce(Integer::sum);
 
+        //因此只有装箱类型才能作为泛型参
+        List<Integer> list = Stream.of(1,2,3).collect(Collectors.toList());
+        list.parallelStream().peek(x-> System.out.println(x)).collect(Collectors.toList()) ;
     }
+
 
 }
