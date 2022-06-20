@@ -1,6 +1,8 @@
 package com.hhx.web_code.lambada;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -20,6 +22,12 @@ public class Testlambada {
         //因此只有装箱类型才能作为泛型参
         List<Integer> list = Stream.of(1,2,3).collect(Collectors.toList());
         list.parallelStream().peek(x-> System.out.println(x)).collect(Collectors.toList()) ;
+    }
+
+    private String getStudent(List<Student> stuList){
+        Map<String,List<Student>> map  = stuList.stream().filter((Student s)-> s.getHeight()>160).collect(Collectors.groupingBy(Student::getSex));
+        stuList.parallelStream().filter((Student s)-> s.getHeight()>160).collect(Collectors.groupingBy(Student::getSex));
+        return "";
     }
 
 
