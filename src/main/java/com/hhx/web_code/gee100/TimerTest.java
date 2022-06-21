@@ -1,5 +1,6 @@
 package com.hhx.web_code.gee100;
 
+import cn.hutool.core.date.DateUtil;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.Executors;
@@ -18,5 +19,8 @@ public class TimerTest {
           },0,1, TimeUnit.SECONDS);
     }
 
-    //
+    private void time(){
+        DateUtil.now();
+    }
+
 }
