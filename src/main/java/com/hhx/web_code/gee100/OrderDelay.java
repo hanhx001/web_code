@@ -46,6 +46,9 @@ public class OrderDelay implements Delayed {
     public static void main(String[] args) {
         List<String> list = new ArrayList<>();
         list.add("1");
+        list.add("2");
+        list.add("3");
+
 
         DelayQueue<OrderDelay> queue = new DelayQueue<OrderDelay>();
         long start = System.currentTimeMillis();
