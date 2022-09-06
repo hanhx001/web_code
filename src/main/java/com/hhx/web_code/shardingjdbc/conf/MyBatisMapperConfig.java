@@ -17,7 +17,7 @@ public class MyBatisMapperConfig {
     public MapperScannerConfigurer shardingMapperScannerConfigurer() {
       MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
       mapperScannerConfigurer.setSqlSessionFactoryBeanName("shardingSessionFactory");
-      mapperScannerConfigurer.setBasePackage("com.ff.unifiedorder.mapper");
+      mapperScannerConfigurer.setBasePackage("com.hhx.web_code.mapper");
       return mapperScannerConfigurer;
     }
 
